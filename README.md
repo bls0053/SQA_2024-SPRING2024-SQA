@@ -4,7 +4,7 @@
 Team Name: SQA_2024
 
 Team Members:
-  Ben Sims
-  Jack McClain
-  Austin Beville
+  Ben Sims, 
+  Jack McClain, 
+  Austin Beville, 
   Hamilton Presnell
