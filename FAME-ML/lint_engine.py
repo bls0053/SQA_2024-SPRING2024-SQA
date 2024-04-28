@@ -7,6 +7,10 @@ Executes the pattern matching and data flow analysis
 
 import py_parser
 import constants 
+import logging
+
+logging.basicConfig(format='%(asctime)s %(message)s', filename='SQA-LOGGER.log', level=logging.INFO)
+logger = logging.getLogger('simple-logger')
 
 def getDataLoadCount( py_file ):
     data_load_count = 0 
@@ -146,6 +150,10 @@ def getDataLoadCountb( py_file ):
             
     LOGGING_IS_ON_FLAG = py_parser.checkLoggingPerData( py_tree, constants.DUMMY_LOG_KW ) 
     # print(LOGGING_IS_ON_FLAG, data_load_countb) 
+
+    # 4.c. Forensics Statement 3
+    logger.info("Displaying generic Information: %s", str(py_tree))
+
     return data_load_countb 
 
 
@@ -210,6 +218,10 @@ def getDataLoadCountc( py_file ):
             
     LOGGING_IS_ON_FLAG = py_parser.checkLoggingPerData( py_tree, constants.DUMMY_LOG_KW ) 
     # print(LOGGING_IS_ON_FLAG, data_load_countc) 
+
+    # 4.c. Forensics Statement 4
+    logger.info("Displaying generic Information: %s", str(py_tree))
+
     return data_load_countc 
 
 
@@ -280,6 +292,10 @@ def getModelLoadCountb( py_file ):
             
     LOGGING_IS_ON_FLAG = py_parser.checkLoggingPerData( py_tree, constants.DUMMY_LOG_KW ) 
     # print(LOGGING_IS_ON_FLAG, model_load_countb) 
+
+    # 4.c. Forensics Statement 5
+    logger.info("Displaying generic Information: %s", str(py_tree))
+
     return model_load_countb 
     
     
@@ -443,7 +459,7 @@ def getModelLabelCountb( py_file ):
         
         	if ( (var_s == constants.SENT_KW ) and (var_d == constants.SENT_KW )  and (rhs_var_iter == constants.INPUT_BATCH_LIST_KW ) ):
         		model_label_countb += 1 
-        		print( constants.CONSOLE_STR_DISPLAY.format( constants.CONSOLE_STR_MODEL_LABEL, func_line , py_file  ) )
+                print( constants.CONSOLE_STR_DISPLAY.format( constants.CONSOLE_STR_MODEL_LABEL, func_line , py_file  ) )
             
     LOGGING_IS_ON_FLAG = py_parser.checkLoggingPerData( py_tree, constants.DUMMY_LOG_KW ) 
     # print(LOGGING_IS_ON_FLAG, model_label_countb) 

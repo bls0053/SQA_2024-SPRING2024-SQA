@@ -11,8 +11,12 @@ import datetime
 import os 
 import pandas as pd
 import py_parser 
-import numpy as np 
+import numpy as np
+import logging
 
+
+logging.basicConfig(format='%(asctime)s %(message)s', filename='SQA-LOGGER.log', level=logging.INFO)
+logger = logging.getLogger('simple-logger')
 
 def giveTimeStamp():
   tsObj = time.time()
@@ -146,6 +150,10 @@ def getAllPythonFilesinRepo(path2dir):
 				if (file_.endswith( constants.PY_FILE_EXTENSION ) and (py_parser.checkIfParsablePython( full_path_file ) )   ):
 					valid_list.append(full_path_file) 
 	valid_list = np.unique(  valid_list )
+
+	# 4.c. Forensics Statement 1
+	logger.info("Displaying generic Information: %s", str(valid_list))
+
 	return valid_list
 
 
@@ -164,6 +172,10 @@ def runFameML(inp_dir, csv_fil):
 	full_df = pd.DataFrame( df_list ) 
 	# print(full_df.head())
 	full_df.to_csv(csv_fil, header= constants.CSV_HEADER, index=False, encoding= constants.UTF_ENCODING)     
+
+	# 4.c. Forensics Statement 2
+	logger.info("Displaying generic Information: %s", str(full_df))
+
 	return output_event_dict
 
 
