@@ -1,13 +1,15 @@
 
 ## Project Report
 
-### Activities
+### Activities and Lessons Learned
 
-- 4.a. In section 4a we had the task of creating a Git Hook that will run and report all security weaknesses in the project in a CSV file whenever a Python file is changed and committed.
+- 4.a. In 4a we had the task of creating a git hook that analyzes our security vulnerabilities and exports them to a csv file. To do this I navigated to .git/hooks directory on my local Repo and made a pre-commit file that uses bandit to accomplish the given task. With this assignment I learned how to use bandit and also how to use a hook to make changes to my repository.
 
-- 4.b. In Section 4b we had the task of creating a fuzz.py file that will automatically fuzz 5 Python methods. Additionally we reported any bugs encountered by the fuzz.py file. fuzz.py will be automatically executed from GitHub actions.
+> Refer to logs-screenshots.docx for our images.
 
-- 4.c. In section 4c we had the task of integrating foresics by modifying 5 Python methods. Below I will list the 5 modified methods.
+- 4.b. In 4b I created a file that is called fuzz.py. This file fuzzes 5 files of my choosing in our repo and prints their output. This helps us look for bugs and ensures that everything is working as intended. This part of the workshop allowed me to learn more about python, fuzzing, and GitHub actions. In this workshop, one of the requirements was that I use GitHub actions to automatically run my fuzz.py file when a push is made to the repository. This was done with the fuzzer.yaml file that is in .github/workflows in our repository.
+
+- 4.c. In section 4c we had the task of integrating foresics by modifying 5 Python methods. Below I will list the 5 modified methods. This part of the workshop allowed me to gain further insight into why certain files should be logged to prevent certain machine learning oriented attacks.
 
     - **/FAME-ML/main.py** - susceptable to model tricking
         - getAllPythonFilesinRepo()
@@ -20,7 +22,7 @@
 
 - 4.d. In section 4d we had the task of integrating continuous integration with GitHub Actions.
 
-### Lessons Learned
+
 
 
 
