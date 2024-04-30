@@ -16,11 +16,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip3 install numpy
-        pip3 install os
-        pip3 install sys
         pip3 install pandas
-        pip3 install datetime
-        pip3 install statistics 
         pip3 install GitPython
         # Install dependencies from requirements.txt
         # Install any additional dependencies needed for the fuzzer
