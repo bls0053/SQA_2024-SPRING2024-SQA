@@ -1,1 +1,1 @@
-4a)	In 4a we had the task of 4a)	In 4a we had the task of 4a)	In 4a we had the task of 
+4a)	In 4a we had the task of creating a git hook that analyzes our security vulnerabilities and exports them to a csv file. To do this I navigated to .git/hooks directory on my local Repo and made a pre-commit file that uses bandit to accomplish the given task. With this assignment I learned how to use bandit and also how to use a hook to make changes to my repository.
