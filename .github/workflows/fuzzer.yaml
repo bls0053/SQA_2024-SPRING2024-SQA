@@ -1,5 +1,7 @@
-
+on: ["push"]
 jobs:
+
+  
   fuzzer:
     runs-on: ubuntu-latest
 
