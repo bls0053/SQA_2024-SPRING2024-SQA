@@ -20,7 +20,13 @@
         - getDataLoadCountc()
         - getModelLoadCountb()
 
-- 4.d. In section 4d we had the task of integrating continuous integration with GitHub Actions.
+- 4.d. In section 4d we had the task of integrating continuous integration with GitHub Actions. To do this, I added the codacity-analysis.yaml file into the .github/workflows directory so that the GitHub Action:
+    
+    - Analyzes each commit/pull request by running all supported static code analysis tools for each language used in this repo
+    - Prints the analysis onto the console
+    - Fails the workflow if it finds 1 or more issues in the code
+
+This uses the default settings for codacity to achieve continuous integration and ensure that the code stays error free as it is being developed.
 
 
 
